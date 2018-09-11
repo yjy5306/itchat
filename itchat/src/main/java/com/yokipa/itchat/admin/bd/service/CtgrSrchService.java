@@ -1,7 +1,7 @@
 package com.yokipa.itchat.admin.bd.service;
 /**
- * @Class : CMSTOREMService
- * @Description : �Խ��� ��� ��ȸ
+ * @Class : CtgrSrchService
+ * @Description : 카테고리검색서비스
  * @Type: Service
  * @Modification
  * 

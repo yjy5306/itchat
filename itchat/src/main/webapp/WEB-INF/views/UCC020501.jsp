@@ -2,16 +2,16 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%--
-	/**
-	 * @Class : UCC020501
-	 * @Description : 문의답변목록조회
-	 * @Modification
-	 * 
-	 *   수정일      수정자              수정내용
-	 *  ---------   ---------   -------------------------------
-	 *  2018.09.08		ITU107		신규
-	 *
-	 */
+/**
+ * @Class : UCC020501
+ * @Description : 문의답변목록조회
+ * @Modification
+ * 
+ *   수정일      수정자              수정내용
+ *  ---------   ---------   -------------------------------
+ *  2018.09.08		ITU107		신규
+ *
+ */
 --%>
 <!-- content -->
 			<div class="right_col" role="main">

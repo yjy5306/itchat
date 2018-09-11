@@ -5,15 +5,15 @@ package com.yokipa.itchat.admin.bd.vo;
  * @Type: VO
  * @Modification
  * 
- *   ������      ������              ��������
+ *   수정일      수정자              수정내용
  *  ---------   ---------   -------------------------------
- *  2018.09.06		������	
+ *  2018.09.08	                     신규
  *
  */
 public class BDCTGRVO {
-	/**ī�װ� ��ȣ */
+	/** 카테고리 번호 */
 	private int ctgrNo;
-	/**ī�װ� �̸� */
+	/** 카테고리 이름 */
 	private String ctgrNm;
 	
 	public int getCtgrNo() {
