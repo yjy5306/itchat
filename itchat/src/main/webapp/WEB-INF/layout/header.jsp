@@ -24,13 +24,13 @@
 		</button>
 		<div class="collapse navbar-collapse" id="open1">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li class="nav-item active"><a class="nav-link" href="#">Home
+				<li class="nav-item<c:if test='${empty ctgrId}'> active</c:if>"><a class="nav-link" href="/">Home
 						<span class="sr-only">(current)</span>
 				</a></li>
 				<!--c tag foreach로 DB(ctgr_nm)을 가져와 돌려야 함 -->
-				<c:forEach var="ctgr" items="${list}">
-					<li class="nav-item"><a class="nav-link"
-						href="/board/${ctgr.ctgrNo}/">${ctgr.ctgrNm}</a></li>
+				<c:forEach var="ctgr" items="${ctgrList}">
+					<li class="nav-item<c:if test='${ctgrId==ctgr.ctgrNm}'> active</c:if>"><a class="nav-link"
+						href="/board?id=${ctgr.ctgrNm}">${ctgr.ctgrNm}</a></li>
 				</c:forEach>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
