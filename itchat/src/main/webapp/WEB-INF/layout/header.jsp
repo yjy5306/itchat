@@ -22,12 +22,11 @@
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <!--c tag foreach로 DB(ctgr_nm)을 가져와 돌려야 함 -->
+        <c:forEach var="bdctgrel" items="${bdctgrli}">
         <li class="nav-item">
-          <a class="nav-link" href="#">자유</a>
+          <a class="nav-link" href="/board/${bdctgrel.ctgrNo}/">${bdctgrel.ctgrNm}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">구인</a>
-        </li>
+        </c:forEach>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search">
