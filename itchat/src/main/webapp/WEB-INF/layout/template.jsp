@@ -33,7 +33,8 @@
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	crossorigin="anonymous">
 <title>Itchat :: 개발자를 위한 커뮤니티 공간</title>
-
+   <!--개인 css-->
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/board.css">
 
 
 </head>

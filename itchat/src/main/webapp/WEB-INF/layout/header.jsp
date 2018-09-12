@@ -4,8 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-   <!--개인 css-->
-  <link rel="stylesheet" href="board.css">
+
 </head>
 <body>
  <div class="jumbotron" style="margin-bottom: 0;">
