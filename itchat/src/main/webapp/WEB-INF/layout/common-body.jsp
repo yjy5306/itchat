@@ -14,5 +14,16 @@
 	 *
 	 */
 --%>
-커몬바디
+<div class="card d-none d-lg-block">
+          <div class="card-body">
+            <a href="#" class="btn btn-lg btn-dark btn-block">Log-in</a>
+            <a href="#" class="btn btn-sm btn-outline-primary btn-block">회원가입</a>
+            <a href="#" class="btn btn-sm btn-outline-primary btn-block">비밀번호찾기</a>
+          </div>
+        </div>
+        <div class="card d-none d-lg-block bg-primary" style="margin-top: 1rem;height: 20rem">
+          <div class="card-body ">
+            광고
+          </div>
+        </div>
 <!-- /top navigation -->
