@@ -22,7 +22,7 @@
 
 	<!-- Home page -->
 	<definition name="home" extends="base.definition">
-		<put-attribute name="body" value="/WEB-INF/views/UCM020200.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/UBRD0001.jsp" />
 	</definition>
 	
 	<!-- 로그인 화면 -->

@@ -5,8 +5,8 @@
 	<comment>common_code</comment>
 	<!-- Common Code Definition -->
 	<entry key="jdbc.driver">net.sf.log4jdbc.sql.jdbcapi.DriverSpy</entry>
-	<entry key="jdbc.url">jdbc:log4jdbc:mysql://127.0.0.1:3306/yokipa?useSSL=false&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC</entry>
-	<entry key="jdbc.username">root</entry>
-	<entry key="jdbc.password">dyd168942</entry>
+	<entry key="jdbc.url">jdbc:log4jdbc:mysql://127.0.0.1:3306/proj2?useSSL=false&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC</entry>
+	<entry key="jdbc.username">proj2</entry>
+	<entry key="jdbc.password">wnddkd1971</entry>
 	<entry key="jdbc.database">mysql</entry>
 </properties>

@@ -90,25 +90,3 @@
 		style="text-align: center">9999</div>
 </div>
 <hr style="margin: 0px;">
-<!--검색바-->
-<div class="container" style="margin-top: 30px;">
-	<div class="input-group mb-3">
-		<input type="text" class="form-control" placeholder="Search"
-			aria-label="Recipient's username" aria-describedby="button-addon2">
-		<div class="input-group-append">
-			<button class="btn btn-outline-secondary" type="button"
-				id="button-addon2">Search</button>
-		</div>
-	</div>
-</div>
-<!--페이지 네비게이션-->
-<nav aria-label="Page navigation example">
-	<ul class="pagination justify-content-center">
-		<li class="page-item disabled"><a class="page-link" href="#"
-			tabindex="-1">Previous</a></li>
-		<li class="page-item"><a class="page-link" href="#">1</a></li>
-		<li class="page-item"><a class="page-link" href="#">2</a></li>
-		<li class="page-item"><a class="page-link" href="#">3</a></li>
-		<li class="page-item"><a class="page-link" href="#">Next</a></li>
-	</ul>
-</nav>
