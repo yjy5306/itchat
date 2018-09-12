@@ -16,5 +16,7 @@ import com.yokipa.itchat.admin.bd.service.CtgrSrchService;
  */
 @Service
 public class CtgrSrchServiceImpl implements CtgrSrchService {
+	
 
+	
 }

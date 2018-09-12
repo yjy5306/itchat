@@ -1,4 +1,4 @@
-package com.yokipa.itchat.admin.bd.web;
+package com.yokipa.itchat.user.cm.web;
 
 import java.util.Locale;
 
@@ -20,14 +20,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class HomeController {
-	
-	
+		
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {		
-		System.out.println("url : home");
+	public String home(Locale locale, Model model) {	
 		return "home";
 	}
 	
