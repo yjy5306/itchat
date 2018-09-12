@@ -8,7 +8,7 @@
     	<!-- member -->
     	
     	<!-- customer counseling -->
-    	<typeAlias alias="bdctgrVo" type="com.yokipa.itchat.admin.bd.vo.BDCTGRVO"/>
+ 
 
     	
     	<!-- sales -->

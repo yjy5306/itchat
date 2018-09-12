@@ -1,4 +1,4 @@
-package com.yokipa.itchat;
+package com.yokipa.itchat.admin.bd.web;
 
 import java.util.Locale;
 
@@ -17,7 +17,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {			
 		return "home";
 	}
