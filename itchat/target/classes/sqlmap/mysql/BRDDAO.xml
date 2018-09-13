@@ -1,0 +1,25 @@
+ml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<!-- 
+   파일명 : BDCTGRDAO.xml
+   파일설명 : 게시판
+   변경내용
+      수정일      수정자              수정내용
+   ========      ======      ==============   
+   2018.09.12    박건우      신규등록
+ -->
+ 
+ <mapper namespace="com.yokipa.itchat.user.bd.service.dao.BRDDAO">
+ 
+ <!--  게시판 목록 조회 -->
+ <select id="list" resultType="bdctgrVo">
+       select * from mbmgr order by MGR_NO desc, MGR_RGT_DT; 
+ </select> 
+ 
+ 
+ 
+ 
+ </mapper>
