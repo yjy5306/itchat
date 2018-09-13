@@ -24,27 +24,17 @@
 	<definition name="home" extends="base.definition">
 		<put-attribute name="body" value="/WEB-INF/views/UBRD0001.jsp" />
 	</definition>
+  <!-- 게시판 -->
+  <definition name="board" extends="base.definition">
+    <put-attribute name="body" value="/WEB-INF/views/UBRD0002.jsp" />
+  </definition>
 	
 	<!-- 로그인 화면 -->
 	<definition name="login" extends="login.form">
 		<put-attribute name="body" value="/WEB-INF/views/UCM020100.jsp" />
 	</definition>
 	
-	
-	<!-- 문의 답변관리 -->
-	<definition name="center/request" extends="base.definition">
-		<put-attribute name="body" value="/WEB-INF/views/UCC020501.jsp" />
-	</definition>
-	<!-- 문의답변등록변경 -->
-	<definition name="center/request/detail" extends="base.definition">
-		<put-attribute name="body" value="/WEB-INF/views/UCC020502.jsp" />
-	</definition>	
-	
-	
-	<!-- 운영관리/공통코드 -->
-	<definition name="operate/code" extends="base.definition">
-		<put-attribute name="body" value="/WEB-INF/views/UCM020300.jsp" />
-	</definition>
+
 	
 
 
