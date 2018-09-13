@@ -1,4 +1,4 @@
-package com.yokipa.itchat.admin.bd.vo;
+package com.yokipa.itchat.user.bd.vo;
 
 import java.sql.Date;
 
@@ -23,12 +23,7 @@ public class BRDVO {
     
     
     
-	@Override
-	public String toString() {
-		return "BRDVO [PST_NO=" + PST_NO + ", CTGR_NO=" + CTGR_NO + ", MBR_NO=" + MBR_NO + ", PST_TTL=" + PST_TTL
-				+ ", PST_CONT=" + PST_CONT + ", VIEW_COUNT=" + VIEW_COUNT + ", VIEW_GOOD=" + VIEW_GOOD + ", MGR_RGT_DT="
-				+ MGR_RGT_DT + "]";
-	}
+
 	public int getPST_NO() {
 		return PST_NO;
 	}

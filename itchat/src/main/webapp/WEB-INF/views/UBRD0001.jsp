@@ -2,6 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<%--
+  /**
+   * @Program ID : UBRD0001
+   * @Description : 메인화면
+   * @Modification
+   * 
+   *    수정일    수정자              수정내용
+   *  ---------   ---------   -------------------------------
+   *  2018.09.12   김준           신규등록
+   *
+   */
+--%>
 <h3>자유 게시판</h3>
 <div class="d-none d-lg-block"
 	style="font-weight: bold; background-color: #eee; font-size: 0.8em;">

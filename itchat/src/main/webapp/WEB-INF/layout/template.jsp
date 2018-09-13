@@ -33,30 +33,31 @@
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	crossorigin="anonymous">
 <title>Itchat :: 개발자를 위한 커뮤니티 공간</title>
-   <!--개인 css-->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/board.css">
+<!--개인 css-->
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/board.css">
 
 
 </head>
-<body class="nav-md">
-	<div class="container body">
-		<div class="main_container">
-			<tiles:insertAttribute name="header" />
-			<div class="row">
-				<div class="col-lg-3 align-self-start">
+<body>
+	<tiles:insertAttribute name="header" />
 
-					<tiles:insertAttribute name="common-body" />
-				</div>
-				<div class="col-lg-9 align-self-start">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 align-self-start">
 
-					<tiles:insertAttribute name="body" />
-				</div>
+				<tiles:insertAttribute name="common-body" />
 			</div>
-			<footer>
-				<tiles:insertAttribute name="footer" />
-			</footer>
+			<div class="col-lg-9 align-self-start">
+
+				<tiles:insertAttribute name="body" />
+			</div>
 		</div>
 	</div>
+	<footer>
+		<tiles:insertAttribute name="footer" />
+	</footer>
+
 
 </body>
 </html>

@@ -1,6 +1,7 @@
-package com.yokipa.itchat.admin.bd.service;
+package com.yokipa.itchat.user.bd.service;
+
 /**
- * @Class : CtgrSrchService
+ * @Class : BRDService
  * @Description : 카테고리검색서비스
  * @Type: Service
  * @Modification
@@ -10,6 +11,7 @@ package com.yokipa.itchat.admin.bd.service;
  *  2018.09.06		������		�űԵ��
  *
  */
-public interface CtgrSrchService {
 
+public interface BRDServuce {
+	
 }

@@ -6,7 +6,8 @@
     <typeAliases>
     	<typeAlias alias="map" type="java.util.Map"/>
     	<!-- member -->
-    	 	<typeAlias alias="bdctgrVo" type="com.yokipa.itchat.admin.bd.vo.BDCTGRVO"/>
+    	 	<typeAlias alias="bdctgrVo" type="com.yokipa.itchat.user.bd.vo.BDCTGRVO"/>
+    	 	<typeAlias alias="brdVo" type="com.yokipa.itchat.user.bd.vo.BRDVO"/>
     	<!-- customer counseling -->
  
 

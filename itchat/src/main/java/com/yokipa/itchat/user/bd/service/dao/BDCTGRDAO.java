@@ -1,6 +1,11 @@
 package com.yokipa.itchat.user.bd.service.dao;
 
+import java.sql.SQLException;
+import java.util.List;
+
 import org.mybatis.spring.annotation.MapperScan;
+
+import com.yokipa.itchat.user.bd.vo.BDCTGRVO;
 /**
  * @Class : CtgrSrchServiceDao
  * @Description : 카테고리검색서비스구현
@@ -13,6 +18,8 @@ import org.mybatis.spring.annotation.MapperScan;
  *
  */
 @MapperScan("BDCTGRDAO")
-public class BDCTGRDAO {
-
+public interface BDCTGRDAO {
+	/*카테고리 목록 조회*/
+	public List<BDCTGRVO> list() throws SQLException; 
+	
 }
