@@ -11,7 +11,8 @@ import com.yokipa.itchat.admin.bd.service.CtgrSrchService;
  *  ---------   ---------   -------------------------------
  *  2018.09.08	                     신규
  *
- */
-public class CtgrSrchServiceImpl implements CtgrSrchService {
-
-}
+ */                                                        
+public class CtgrSrchServiceImpl implements CtgrSrchService{
+                                                           
+}                                                          
+                                                           

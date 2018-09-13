@@ -19,8 +19,9 @@ import com.yokipa.itchat.user.bd.vo.BDCTGRVO;
  * @Type: Controller
  * @Modification
  * 
- * 				수정일 수정자 수정내용 --------- ---------
- *               ------------------------------- 2018.09.08 신규
+ * 	수정일      수정자      수정내용
+ *  ---------   ---------   ------------------------------- 
+ *  2018.09.08              신규
  *
  */
 @Controller
@@ -30,9 +31,9 @@ public class HomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
+		//카테고리 부르기
 		try {
 			List<BDCTGRVO> list = ctgrService.selCtgrList();
-			System.out.println(list);
 			model.addAttribute("ctgrList", list);
 		} catch (SQLException e) {
 			e.printStackTrace();
