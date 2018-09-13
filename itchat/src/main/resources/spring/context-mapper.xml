@@ -10,7 +10,7 @@
 	</bean>
 	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.yokipa.itchat**.service.dao"/>
+		<property name="basePackage" value="com.yokipa.itchat.**.service.dao"/>
 		<property name="sqlSessionFactoryBeanName" value="sqlSession" />
 	</bean>
 		
