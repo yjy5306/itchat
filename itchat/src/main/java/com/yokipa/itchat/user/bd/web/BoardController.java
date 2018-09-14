@@ -2,19 +2,18 @@ package com.yokipa.itchat.user.bd.web;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Locale;
 
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.yokipa.itchat.user.bd.service.CtgrService;
+import com.yokipa.itchat.user.bd.service.HomeBrdService;
 import com.yokipa.itchat.user.bd.vo.BDCTGRVO;
+import com.yokipa.itchat.user.bd.vo.BoardPageDTO;
 
 /**
  * @Class : HomeConroller
@@ -32,20 +31,15 @@ public class BoardController {
 	private CtgrService ctgrService;
 
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
-	public String home(@RequestParam("id") String id, Model model) {
+	public String home(Model model, BoardPageDTO pageBean) {
 		try {
 			List<BDCTGRVO> list = ctgrService.selCtgrList();
-			System.out.println(list);
 			model.addAttribute("ctgrList", list);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		if (id != null) {
-			model.addAttribute("ctgrId", id);
-			return "board";
-		} else {
-			return "home";
-		}
+	
+		return "board";
 
 	}
 
