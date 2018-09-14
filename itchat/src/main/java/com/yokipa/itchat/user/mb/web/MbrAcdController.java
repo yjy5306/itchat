@@ -1,5 +1,7 @@
 package com.yokipa.itchat.user.mb.web;
 
+import java.sql.SQLException;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
@@ -26,10 +28,15 @@ public class MbrAcdController {
 	@Inject
 	MbrAcdService mbrAcdServcie;
 	
-	@RequestMapping("/mbrAcd")
+	@RequestMapping("/singup")
 	public String MbrAcd(@RequestBody MBMBRVO vo) {
 		
+		try {
+			mbrAcdServcie.insert(vo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	
-		return "";
+		return "home";
 	}
 }

@@ -6,31 +6,38 @@
       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
 
-   <http pattern="/**/*.js" security="none"/>
-   <http pattern="/**/*.css" security="none"/>
-   
-   <http auto-config="true" use-expressions="true" disable-url-rewriting="true">
-      <intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')"/>
-      <intercept-url pattern="/login.do" access="isAnonymous()"/>
-      <intercept-url pattern="/main.do" access="permitAll"/>
-      <logout logout-url="/logout" logout-success-url="/main.do" invalidate-session="true" delete-cookies="SPRING_SECURITY_REMEMBER_ME_COOKIE"/>
-<!--       <form-login
-         username-parameter="loginid"
-         password-parameter="loginpwd"
-         login-page="/login.do"
-         default-target-url="/main.do"
-         authentication-failure-url="/login.do?fail=true"
-      /> -->
-      <csrf disabled="true"/>
-   </http>
-   
-   <authentication-manager>
-      <authentication-provider>
-         <user-service>
-            <user name="user" password="123" authorities="ROLE_USER"/>
-            <user name="admin" password="123" authorities="ROLE_ADMIN,ROLE_USER"/>
-         </user-service>
-      </authentication-provider>
-   </authentication-manager>
+	 <http pattern="/**/*.js" security="none"/>
+	 <http pattern="/**/*.css" security="none"/>
+	 
+	 <http auto-config="true" use-expressions="true" disable-url-rewriting="true">
+	    <intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')"/>
+	    <intercept-url pattern="/login.do" access="isAnonymous()"/>
+	    <intercept-url pattern="/main.do" access="permitAll"/>
+	     <form-login
+	       login-page="{로그인 페이지 }"
+	       authentication-success-handler-ref="loginSuccessHandler"
+	       authentication-failure-handler-ref="loginFailureHandler"
+	    /> 
+	    
+	    <logout logout-success-url="{메인페이지}"/>
+	    
+	    <csrf disabled="false"/>
+	 </http>
+	  
+	 <!-- 로그인 성공,실패 --> 
+	 <beans:bean id="loginSuccessHandler" class="com.yokipa.itchat.core.security.LoginSuccessHandler"></beans:bean>
+	 <beans:bean id="loginFailureHandler" class="com.yokipa.itchat.core.security.LoginFailureHandler"></beans:bean>
+	   
+	 <!-- security password encoder-->  
+	 <beans:bean id="encoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder"/>
+    
+     <!-- 인증 -->
+     <beans:bean id="MbrSecurityService" class="com.yokipa.itchat.user.mb.service.MbrSecurityService"></beans:bean>
+    
+	 <authentication-manager>  
+	  <authentication-provider user-service-ref="MbrSecurityService">
+	   <password-encoder ref="encoder" />     
+	  </authentication-provider>
+	 </authentication-manager> 
 
 </beans:beans>

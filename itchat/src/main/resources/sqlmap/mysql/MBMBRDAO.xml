@@ -20,8 +20,7 @@
 		,MBR_NM     AS mbrNm
 		,MBR_PW     AS mbrPw
 		,MBR_RGT_DT AS mbrRgtDt
-		,CERT_KEY   AS certKey
-		,DL_FL      AS dlFl
+
  	 
 	</sql>
  
@@ -37,10 +36,31 @@
              #{mbrNm} 
              #{mbrPw} 
              now()
-             #{certKey}
-             #{dlFl} 
+
                 )
  </insert> 
  
- 
+ <!-- 회원 인증 -->
+
+<select id="getMbrRole" resultType="MbrRole">
+
+	SELECT
+		MBR_NM AS mbrNm,
+		MBR_ROLE AS mbrRole
+	FROM
+		MBMBR
+	WHERE
+		mbrNm = #{mbrNm}	
+</select> 
+
+<select id="getFindMbr" resultType="mbmbrVo">
+	
+	SELECT
+	 <include refid="selectColumn"></include>
+	FROM
+		MBMBR
+	WHERE
+		mbrNm = #{mbrNm}	
+</select>
+
  </mapper>

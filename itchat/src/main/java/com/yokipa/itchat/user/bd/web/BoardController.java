@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.yokipa.itchat.user.bd.service.CtgrService;
+import com.yokipa.itchat.admin.bd.service.CtgrSrchService;
 import com.yokipa.itchat.user.bd.vo.BDCTGRVO;
 
 /**
@@ -31,7 +31,7 @@ import com.yokipa.itchat.user.bd.vo.BDCTGRVO;
 @Controller
 public class BoardController {
 	@Inject
-	private CtgrService ctgrService;
+	private CtgrSrchService ctgrService;
 
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	public String home(@RequestParam String id, Model model) {

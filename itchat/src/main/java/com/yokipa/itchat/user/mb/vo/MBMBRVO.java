@@ -1,6 +1,13 @@
 package com.yokipa.itchat.user.mb.vo;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 /**
  * @Class : MBMBRVO
  * @Description : 회원 VO
@@ -12,7 +19,7 @@ import java.sql.Timestamp;
  *  2018.09.12		정찬용		신규등록
  *
  */
-public class MBMBRVO {
+public class MBMBRVO implements UserDetails{
 	/**회원번호 */
 	private int MBR_NO;
 	/**회원 이메일 */
@@ -23,13 +30,54 @@ public class MBMBRVO {
 	private String MBR_PW;
 	/**등록날짜*/
 	private Timestamp MBR_RGT_DT;
-	/**권한 */
-	private String MBR_AUTH;
 	/**인증키*/
 	private String CERT_KEY;
 	/**삭제여부 */
 	private String DL_FL;
+	/**권한 */
+	private List<MbrRole> getMbrRole;
 	
+	
+	
+	
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		List<GrantedAuthority> authorities = new ArrayList<>();
+		for (MbrRole role : getMbrRole) {
+			authorities.add(new SimpleGrantedAuthority(role.getRole()));
+		}
+		return authorities;
+	}
+	@Override
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return this.MBR_PW;
+	}
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return this.MBR_NM;
+	}
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return true;
+	}
 	public int getMBR_NO() {
 		return MBR_NO;
 	}
@@ -60,12 +108,6 @@ public class MBMBRVO {
 	public void setMBR_RGT_DT(Timestamp mBR_RGT_DT) {
 		MBR_RGT_DT = mBR_RGT_DT;
 	}
-	public String getMBR_AUTH() {
-		return MBR_AUTH;
-	}
-	public void setMBR_AUTH(String mBR_AUTH) {
-		MBR_AUTH = mBR_AUTH;
-	}
 	public String getCERT_KEY() {
 		return CERT_KEY;
 	}
@@ -78,5 +120,13 @@ public class MBMBRVO {
 	public void setDL_FL(String dL_FL) {
 		DL_FL = dL_FL;
 	}
+	public List<MbrRole> getGetMbrRole() {
+		return getMbrRole;
+	}
+	public void setGetMbrRole(List<MbrRole> getMbrRole) {
+		this.getMbrRole = getMbrRole;
+	}
+	
+	
 
 }
