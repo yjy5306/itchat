@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.yokipa.itchat.user.bd.service.BRDService;
 import com.yokipa.itchat.user.bd.service.CtgrService;
 import com.yokipa.itchat.user.bd.vo.BDCTGRVO;
+import com.yokipa.itchat.user.bd.vo.BRDPageMaker;
 import com.yokipa.itchat.user.bd.vo.BRDVO;
 
 /**
@@ -42,6 +43,10 @@ public class BoardController {
 			brd.setPerPageNum(10);
 			model.addAttribute("ctgrList", list);
 			model.addAttribute("brdList",brdService.selBrdList());
+			
+			BRDPageMaker pageMaker = new BRDPageMaker();
+			pageMaker.setBrd(brd);
+			//pageMaker.setTotalCount();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

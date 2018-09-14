@@ -41,6 +41,10 @@
 		where
 		pstNo = #{pstNo};
 	</select>
+	
+	<select id="listCount" resultType="int" parameterType="brdVO">
+		select count(*) from bdpst ;
+	</select>
 
 	<!-- 게시판 등록 -->
 	<select id="insert">

@@ -16,6 +16,9 @@ public interface BRDDAO {
 	   /**게시판 조회 */
 	public BRDVO view(BRDVO brdVo)throws SQLException;
 	
+	 /**게시판 총 갯수 */
+	public int listCount(BRDVO brdVo)throws SQLException;
+	
 	   /**게시판 등록 */ 	
 	public void insert(BRDVO brdVo)throws SQLException;
 	
