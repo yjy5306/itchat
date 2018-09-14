@@ -16,6 +16,7 @@ import com.yokipa.itchat.user.bd.vo.BoardPageDTO;
  *
  */
 public interface BrdService {
+	
 	public List<BoardPageDTO> selHomeBrdList(BoardPageDTO pageBean) throws SQLException;
 
 
