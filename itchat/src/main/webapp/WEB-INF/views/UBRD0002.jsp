@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <%--
   /**
@@ -14,6 +15,9 @@
    *
    */
 --%>
+${brdList }
+
+
 <h3>자유 게시판</h3>
 <div class="d-none d-lg-block"
 	style="font-weight: bold; background-color: #eee; font-size: 0.8em;">
@@ -28,80 +32,23 @@
 </div>
 <hr style="margin: 0;">
 <!--게시물-->
+<c:forEach var="list" items="${brdList }">
 <div class="row">
-	<div class="d-none d-lg-block col-lg-1 brdNum">#13021</div>
+	<div class="d-none d-lg-block col-lg-1 brdNum">${list.pstNo}</div>
 	<div class="col-lg-5 col-12 brdCont text-truncate">
-		<a href="">안녕하세요 만나서 반갑습니다.</a>
+		<a href="<c:url value="/BRDview?no=${list.pstNo }" />">${list.pstTtl}</a>
 	</div>
-	<div class="col-lg-2 col-4 brdInfo text-truncate">작성자ㅇㅇㅇ씨</div>
+	<div class="col-lg-2 col-4 brdInfo text-truncate">${list.mbrNm }</div>
 	<div class="d-none d-lg-block col brdNum" style="text-align: center">
-		18-09-08</div>
+		<fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${list.pstRgtDt}" /></div>
 	<div class="col-lg-1 col-3 brdNum brdInfo" data-colName="조회"
-		style="text-align: center">9999</div>
+		style="text-align: center">${list.viewCount}</div>
 	<div class="col-lg-1 col-5 brdNum brdInfo" data-colName="추천"
-		style="text-align: center">9999</div>
+		style="text-align: center">${list.viewGood}</div>
 </div>
 <hr style="margin: 0px;">
-<!--게시물-->
-<div class="row">
-	<div class="d-none d-lg-block col-lg-1 brdNum">#13021</div>
-	<div class="col-lg-5 col-12 brdCont text-truncate">
-		<a href="">안녕하세요 만나서 반갑습니다.</a>
-	</div>
-	<div class="col-lg-2 col-4 brdInfo text-truncate">작성자ㅇㅇㅇ씨</div>
-	<div class="d-none d-lg-block col brdNum" style="text-align: center">
-		18-09-08</div>
-	<div class="col-lg-1 col-3 brdNum brdInfo" data-colName="조회"
-		style="text-align: center">9999</div>
-	<div class="col-lg-1 col-5 brdNum brdInfo" data-colName="추천"
-		style="text-align: center">9999</div>
-</div>
-<hr style="margin: 0px;">
-<!--게시물-->
-<div class="row">
-	<div class="d-none d-lg-block col-lg-1 brdNum">#13021</div>
-	<div class="col-lg-5 col-12 brdCont text-truncate">
-		<a href="">안녕하세요 만나서 반갑습니다.</a>
-	</div>
-	<div class="col-lg-2 col-4 brdInfo text-truncate">작성자ㅇㅇㅇ씨</div>
-	<div class="d-none d-lg-block col brdNum" style="text-align: center">
-		18-09-08</div>
-	<div class="col-lg-1 col-3 brdNum brdInfo" data-colName="조회"
-		style="text-align: center">9999</div>
-	<div class="col-lg-1 col-5 brdNum brdInfo" data-colName="추천"
-		style="text-align: center">9999</div>
-</div>
-<hr style="margin: 0px;">
-<!--게시물-->
-<div class="row">
-	<div class="d-none d-lg-block col-lg-1 brdNum">#13021</div>
-	<div class="col-lg-5 col-12 brdCont text-truncate">
-		<a href="">안녕하세요 만나서 반갑습니다.</a>
-	</div>
-	<div class="col-lg-2 col-4 brdInfo text-truncate">작성자ㅇㅇㅇ씨</div>
-	<div class="d-none d-lg-block col brdNum" style="text-align: center">
-		18-09-08</div>
-	<div class="col-lg-1 col-3 brdNum brdInfo" data-colName="조회"
-		style="text-align: center">9999</div>
-	<div class="col-lg-1 col-5 brdNum brdInfo" data-colName="추천"
-		style="text-align: center">9999</div>
-</div>
-<hr style="margin: 0px;">
-<!--게시물-->
-<div class="row">
-	<div class="d-none d-lg-block col-lg-1 brdNum">#13021</div>
-	<div class="col-lg-5 col-12 brdCont text-truncate">
-		<a href="">안녕하세요 만나서 반갑습니다.</a>
-	</div>
-	<div class="col-lg-2 col-4 brdInfo text-truncate">작성자ㅇㅇㅇ씨</div>
-	<div class="d-none d-lg-block col brdNum" style="text-align: center">
-		18-09-08</div>
-	<div class="col-lg-1 col-3 brdNum brdInfo" data-colName="조회"
-		style="text-align: center">9999</div>
-	<div class="col-lg-1 col-5 brdNum brdInfo" data-colName="추천"
-		style="text-align: center">9999</div>
-</div>
-<hr style="margin: 0px;">
+</c:forEach>
+
 <!--검색바-->
 <div class="container" style="margin-top: 30px;">
 	<div class="input-group mb-3">
