@@ -29,6 +29,7 @@
 		bdpst
 		order by
 		pst_No desc, pst_Rgt_Dt desc
+		limit #{pageStart}, #{perPageNum};
 	</select>
 
 	<!-- 게시판 하나의 목록 조회 -->

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.yokipa.itchat.user.bd.service.BRDService;
 import com.yokipa.itchat.user.bd.service.CtgrService;
 import com.yokipa.itchat.user.bd.vo.BDCTGRVO;
+import com.yokipa.itchat.user.bd.vo.BRDVO;
 
 /**
  * @Class : HomeConroller
@@ -34,10 +35,11 @@ public class BoardController {
 	private BRDService brdService;
 
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
-	public String home(@RequestParam("id") String id, Model model) {
+	public String home(@RequestParam("id") String id,BRDVO brd, Model model) {
 		try {
 			List<BDCTGRVO> list = ctgrService.selCtgrList();
 			System.out.println(list);
+			brd.setPerPageNum(10);
 			model.addAttribute("ctgrList", list);
 			model.addAttribute("brdList",brdService.selBrdList());
 		} catch (SQLException e) {

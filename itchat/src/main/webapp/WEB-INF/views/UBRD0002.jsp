@@ -65,14 +65,16 @@
 	<ul class="pagination justify-content-center">
 	
 	<c:if test="${pageMaker.startPage >= 11 }">
-		<li class="page-item disabled"><a class="page-link" href="<c:url value="/message/ms_list${pageMaker.uri(pageMaker.start)}"/>">Previous</a></li>
+		<li class="page-item disabled"><a class="page-link" href="<c:url value="/board${pageMaker.uri(pageMaker.start)}"/>">Previous</a></li>
 	</c:if>
 	
 	<c:forEach var="a" begin="${pageMaker.startPage }" end="${pageMaker.totalPage }">
-		<li class="page-item"><a class="page-link" href="<c:url value="/message/ms_list${pageMaker.uri(a)}"/>">${a }</a></li>
+		<li class="page-item"><a class="page-link" href="<c:url value="/board${pageMaker.uri(a)}"/>">${a }</a></li>
 	</c:forEach>
 	
+	<c:if test="${pageMaker.next  }">
+		<li class="page-item"><a class="page-link" href="<c:url value="/board${pageMaker.uri(pageMaker.totalPage + 1)} "/>">Next</a></li>
+	</c:if>
 		
-		<li class="page-item"><a class="page-link" href="#">Next</a></li>
 	</ul>
 </nav>
