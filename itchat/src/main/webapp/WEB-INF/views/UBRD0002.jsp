@@ -15,10 +15,9 @@
    *
    */
 --%>
-${brdList }
-
 
 <h3>자유 게시판</h3>
+<button type="button" class="btn btn-secondary btn-sm" style="text-align: left">글 작성</button>
 <div class="d-none d-lg-block"
 	style="font-weight: bold; background-color: #eee; font-size: 0.8em;">
 	<div class="row">
@@ -60,14 +59,20 @@ ${brdList }
 		</div>
 	</div>
 </div>
+
 <!--페이지 네비게이션-->
 <nav aria-label="Page navigation example">
 	<ul class="pagination justify-content-center">
-		<li class="page-item disabled"><a class="page-link" href="#"
-			tabindex="-1">Previous</a></li>
-		<li class="page-item"><a class="page-link" href="#">1</a></li>
-		<li class="page-item"><a class="page-link" href="#">2</a></li>
-		<li class="page-item"><a class="page-link" href="#">3</a></li>
+	
+	<c:if test="${pageMaker.startPage >= 11 }">
+		<li class="page-item disabled"><a class="page-link" href="<c:url value="/message/ms_list${pageMaker.uri(pageMaker.start)}"/>">Previous</a></li>
+	</c:if>
+	
+	<c:forEach var="a" begin="${pageMaker.startPage }" end="${pageMaker.totalPage }">
+		<li class="page-item"><a class="page-link" href="<c:url value="/message/ms_list${pageMaker.uri(a)}"/>">${a }</a></li>
+	</c:forEach>
+	
+		
 		<li class="page-item"><a class="page-link" href="#">Next</a></li>
 	</ul>
 </nav>

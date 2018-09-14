@@ -1,7 +1,5 @@
 package com.yokipa.itchat.user.bd.web;
 
-
-
 import java.sql.SQLException;
 import java.util.List;
 
@@ -36,7 +34,7 @@ public class BoardController {
 	private BRDService brdService;
 
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
-	public String home(@RequestParam String id, Model model) {
+	public String home(@RequestParam("id") String id, Model model) {
 		try {
 			List<BDCTGRVO> list = ctgrService.selCtgrList();
 			System.out.println(list);
@@ -45,8 +43,13 @@ public class BoardController {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		model.addAttribute("ctgrId",id);
-		return "board";
+		if (id != null) {
+			model.addAttribute("ctgrId", id);
+			return "board";
+		} else {
+			return "home";
+		}
+
 	}
 
 }

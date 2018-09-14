@@ -22,8 +22,40 @@ public class BRDVO {
     private int viewGood;
     /** 게시물 등록 날짜 */
     private Date pstRgtDt;
+    /** 게시물 페이지*/
+    private int page;
+    /** 게시물 총페이지 수 */
+    private int perPageNum;
     
+	public void setPage(int page) {
+		
+		if(page <= 0) {
+			this.page = 1;
+			return;
+		}
+		this.page = page;
+	}
+	
+	public void setPerPageNum(int perPageNum) {
+		if(perPageNum <= 0 || perPageNum > 100) {
+			this.perPageNum = 10;
+			return;
+		}
+		this.perPageNum = perPageNum;
+	}
+	
+	public int getPageStart() {
+		return (this.page - 1) * perPageNum;
+	}
     
+	public int getPage() {
+		return page;
+	}
+
+	public int getPerPageNum() {
+		return perPageNum;
+	}
+
 	public int getPstNo() {
 		return pstNo;
 	}
