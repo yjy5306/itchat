@@ -14,6 +14,7 @@
    *
    */
 --%>
+
 <h3>자유 게시판</h3>
 <div class="d-none d-lg-block"
 	style="font-weight: bold; background-color: #eee; font-size: 0.8em;">
