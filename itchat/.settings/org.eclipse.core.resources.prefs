@@ -1,3 +1,8 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=branch 'master' of https\://github.com/spectralfox05/itchat.git
 eclipse.preferences.version=1
+encoding//src/main/java/com/yokipa/itchat/user/bd/service/impl/CtgrServiceImpl.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/UBRD0001.jsp=UTF-8
+encoding//src/main/webapp/resources/html/_board4.html=UTF-8
 encoding/<project>=UTF-8
