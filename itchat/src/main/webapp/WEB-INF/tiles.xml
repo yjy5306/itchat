@@ -34,7 +34,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/UCM020100.jsp" />
 	</definition>
 	
-
+	<!-- 회원가입 -->
+	<definition name="singup" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/views/UMBR0001.jsp"/>
+	</definition>
 	
 
 
