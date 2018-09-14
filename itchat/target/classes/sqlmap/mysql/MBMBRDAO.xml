@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<!-- 
+   파일명 : MBMBRDAO.xml
+   파일설명 : 회원
+   변경내용
+      수정일      수정자              수정내용
+   ========      ======      ==============   
+   2018.09.12    정찬용      신규등록
+ -->
+ 
+ <mapper namespace="com.yokipa.itchat.user.mb.service.dao.MBMBRDAO">
+ 
+ 	 	<sql id="selectColumn">
+		 MBR_NO     AS mbrNo
+		,MBR_EML    AS mbrEml
+		,MBR_NM     AS mbrNm
+		,MBR_PW     AS mbrPw
+		,MBR_RGT_DT AS mbrRgtDt
+
+ 	 
+	</sql>
+ 
+ <!--  회원 등록 -->
+ <insert id="insert" parameterType="mbmbrVo">
+       INSERT /* com.yokipa.itchat.user.bd.service.dao.MBMBRDAO.insert */
+        INTO
+           MBMBR
+        <include refid="selectColumn"/>
+        VALUES (
+             #{mbrNo} 
+             #{mbrEml} 
+             #{mbrNm} 
+             #{mbrPw} 
+             now()
+
+                )
+ </insert> 
+ 
+ <!-- 회원 인증 -->
+
+<select id="getMbrRole" resultType="MbrRole">
+
+	SELECT
+		MBR_NM AS mbrNm,
+		MBR_ROLE AS mbrRole
+	FROM
+		MBMBR
+	WHERE
+		mbrNm = #{mbrNm}	
+</select> 
+
+<select id="getFindMbr" resultType="mbmbrVo">
+	
+	SELECT
+	 <include refid="selectColumn"></include>
+	FROM
+		MBMBR
+	WHERE
+		mbrNm = #{mbrNm}	
+</select>
+
+ </mapper>

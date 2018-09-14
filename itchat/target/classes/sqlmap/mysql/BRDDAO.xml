@@ -1,3 +1,155 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 파일명 : BDCTGRDAO.xml 파일설명 : 게시판 변경내용 수정일 수정자 수정내용 ======== ====== ============== 
+	2018.09.12 박건우 신규등록 -->
+
+<mapper namespace="com.yokipa.itchat.user.bd.service.dao.BRDDAO">
+	<sql id="brdColumn">
+		CTGR_NO AS ctgrNo
+		,CTGR_NM AS ctgrNm
+	</sql>
+	<!-- 게시판 목록 조회 -->
+	<select id="list" resultType="brdVo">
+		select
+		*
+		from
+		mbmgr
+		order by
+		MGR_NO
+		desc, MGR_RGT_DT;
+	</select>
+
+	<!-- 게시판 하나의 목록 조회 -->
+	<select id="void" resultType="brdVo">
+		select
+		*
+		from
+		mbmgr
+		where
+		MGR_NO =
+		#{MGR_NO};
+	</select>
+
+	<!-- 게시판 등록 -->
+	<select id="insert">
+		PST_NO as PSTNO ,
+		CTGR_NO as CTGRNO ,
+		MBR_NO as MBRNO ,
+		PST_TTL as PSTTTL ,
+		PST_CONT as PSTCONT ,
+		VIEW_COUNT as VIEWCOUNT ,
+		VIEW_GOOD as VIEWGOOD ,
+		PST_RGT_DT as PSTRGTDT ,
+		PST_UDT_DT as PSTUDTDT
+	</select>
+
+	<!-- 게시판 수정 -->
+	<select id="update">
+		UPDATE
+		mbmgr
+		SET
+		`MGR_SUBJECT`=#{MGR_SUBJECT},
+		`MGR_AUTH`=#{MGR_AUTH}, `DL_FL`=#{DL_FL}
+		WHERE
+		`MGR_NO`=#{MGR_NO};
+	</select>
+
+	<!-- 게시판 삭제 -->
+	<select id="delete">
+		delete from
+		mbmgr
+		where
+		MGR_NO = #{MGR_NO};
+	</select>
+
+	<!-- 7일 이내의 게시물 중 추천수가 높은 5개의 게시물 -->
+	<select id="selHomeBrdList" parameterType="int"
+		resultType="brdVo">
+		SELECT *
+		FROM
+		BDPST
+		WHERE
+		CTGR_NO = #{CTGR_NO}
+		AND
+		PST_RGT_DT > DATE_SUB(NOW(), INTERVAL 7 DAY)
+		order by view_good desc
+		LIMIT 5
+	</select>
+
+
+</mapper>
+=======
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<!-- 
+   파일명 : BDCTGRDAO.xml
+   파일설명 : 게시판
+   변경내용
+      수정일      수정자              수정내용
+   ========      ======      ==============   
+   2018.09.12    박건우      신규등록
+ -->
+ 
+ <mapper namespace="com.yokipa.itchat.user.bd.service.dao.BRDDAO">
+ 
+ <!--  게시판 목록 조회 -->
+ <select id="list" resultType="brdVo">
+       select 
+       		*
+       from 
+       		mbmgr
+       order by 
+       		MGR_NO desc, MGR_RGT_DT; 
+ </select> 
+ 
+ <!--  게시판 하나의 목록 조회 -->
+ <select id="void" resultType="brdVo">
+       select
+       		 *
+       from
+       		 mbmgr
+       where
+       		 MGR_NO = #{MGR_NO}; 
+ </select> 
+ 
+  <!--  게시판 등록 -->
+ <select id="insert">
+ 	INSERT INTO 
+ 		mbmgr 
+ 	(`MGR_SUBJECT`, `MGR_AUTH`,`DL_FL`)
+ 		VALUES
+ 	(#{MGR_SUBJECT},#{MGR_AUTH}#{DL_FL});
+ </select>
+ 
+ <!--  게시판 수정 -->
+ <select id="update">
+ 	UPDATE 
+ 		mbmgr
+ 	SET
+ 		 `MGR_SUBJECT`=#{MGR_SUBJECT}, `MGR_AUTH`=#{MGR_AUTH}, `DL_FL`=#{DL_FL} 
+ 	WHERE
+ 		  `MGR_NO`=#{MGR_NO};
+ </select>
+ 
+  <!--  게시판 삭제 -->
+ <select id="delete">
+ 	delete from 
+ 		mbmgr 
+ 	where 
+ 		MGR_NO = #{MGR_NO};
+ </select>
+ 
+ 
+ </mapper>
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -67,3 +219,5 @@
 
 
 </mapper>
+>>>>>>> branch 'master' of https://github.com/spectralfox05/itchat.git
+>>>>>>> branch 'master' of https://github.com/spectralfox05/itchat.git

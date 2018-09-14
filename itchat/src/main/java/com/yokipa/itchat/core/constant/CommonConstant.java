@@ -72,7 +72,10 @@ public class CommonConstant {
 	private static final int FIRST_PAGE_NUM = 1;
 	/** page per list item count */
 	private static final int PAGE_PER_COUNT= 10;
+	/** homepage per list item count */
+	private static final int HOMEPAGE_PER_COUNT= 5;
 	
+
 	/** 작업자ID 초기값 */
 	private static final String DFLT_WK_ID = "system";
 	
@@ -256,5 +259,10 @@ public class CommonConstant {
 		return RESULT_LIST_NM;
 	}
 	
+	/** 홈페이지에선 게시판 하나당 5게시물씩 출력됨*/
+	public static int getHomepagePerCount() {
+		return HOMEPAGE_PER_COUNT;
+	}
+
 	
 }
